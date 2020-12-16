@@ -1,0 +1,103 @@
+<h1>The Gauss scriptable calculator</h1>
+
+<p>Gauss is a simple and fast scriptable calculator, made in <strong>C</strong>, <strong>lex</strong> and <strong>YACC</strong>. Gauss has lots of operations, such as <em>log x</em>, <em>max(x, y)</em> and more...</p>
+
+<h3>Getting Gauss</h3>
+
+<p>If you want to install Gauss in your device, you have 2 options: get the pre-compiled binaries or build it from source.</p>
+
+<h6>Building Gauss</h6>
+
+<p>The first thing you need to do is to clone the Gauss GitHub repository:
+<code>bash
+$ git clone https://github.com/HdbSoft/gauss.git Gauss
+$ cd Gauss
+</code></p>
+
+<p>And then use GNU Make to build Gauss:
+<code>bash
+$ make
+</code></p>
+
+<h3>Gauss reference</h3>
+
+<p>If you want to create your own Gauss script, you have to know the basic syntax. Every formula must end with <code>=</code>, and must contain ONLY NUMBERS, NOT STRINGS.</p>
+
+<h6>Operators</h6>
+
+<ul>
+<li><code>+</code>: Addition</li>
+<li><code>-</code>: Subtraction</li>
+<li><code>*</code>: Multiplication</li>
+<li><code>/</code>: Division</li>
+<li><code>^</code>: Exponentiation</li>
+</ul>
+
+<h6>Functions</h6>
+
+<ul>
+<li><code>max(x, y)</code>: Maximum of 2 numbers</li>
+<li><code>sqrt x</code>: Square root of x</li>
+<li><code>ln x</code>: Natural logarithm of x</li>
+<li><code>log x</code>: Logarithm of x (base 10)</li>
+<li><code>log2 x</code>: Logarithm of x (base 2)</li>
+<li><code>exp x</code>: e raised to x</li>
+<li><code>abs x</code>: Absolute value of x</li>
+<li><code>floor x</code>: Floor of x</li>
+<li><code>ceil x</code>: Ceil of x</li>
+<li><code>sin x</code>: Sine of x</li>
+<li><code>sinh x</code>: Hyperbolic sine of x</li>
+<li><code>asin x</code>: Arcosine of x</li>
+<li><code>asinh x</code>: Arco hyperbolic sine of x</li>
+<li><code>cos x</code>: Cosine of x</li>
+<li><code>cosh x</code>: Hyperbolic sine of x</li>
+<li><code>acos x</code>: Arcocosine of x</li>
+<li><code>acosh x</code>: Arco hyperbolic cosine of x</li>
+<li><code>tan x</code>: Tan of x</li>
+<li><code>tanh x</code>: Hyperbolic tan of x</li>
+<li><code>atan x</code>: Arcotan of x</li>
+<li><code>atanh x</code>: Arco hyperbolic tan of x</li>
+</ul>
+
+<h3>Gauss file tree</h3>
+
+<ul>
+<li><strong>source/parser.y:</strong> Gauss parser made in YACC</li>
+<li><strong>source/scanner.l:</strong> Gauss scanner made in lex</li>
+<li><strong>source/cli.h:</strong> Gauss CLI C module</li>
+<li><strong>source/math.h</strong> Gauss math module</li>
+<li><strong>tests/addition.math:</strong> Addition tests</li>
+<li><strong>tests/substraction.math:</strong> Substraction tests</li>
+<li><strong>tests/multiplication.math:</strong> Multiplication tests</li>
+<li><strong>tests/division.math:</strong> Division tests</li>
+<li><strong>tests/exponentiation.math:</strong> Exponentiation tests</li>
+<li><strong>tests/trigonometry.math:</strong> Trigonometry tests</li>
+<li><strong>tests/functions.math:</strong> Functions tests</li>
+</ul>
+
+<h3><a href="LICENSE.md">MIT license</a></h3>
+
+<h6>Copyright (c) 2020 HdbSoft</h6>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+
+<p><br>
+<br></p>
+
+<p>I hope you liked the Gauss calculator.</p>

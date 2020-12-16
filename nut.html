@@ -1,0 +1,122 @@
+<h1>The nut kernel</h1>
+
+<p>Nut is a simple small kernel to make powerfull operative systems. Nut is made in C/C++, ASM, Makefile, NutScript and YACC &amp; LEX for the NutScript interpreter. Nut has got many different modules, from I/O to FAT32 file system implementation.</p>
+
+<h3>Getting nut</h3>
+
+<p>If you want to get the nut kernel, you have 2 options, get the built kernel in the <a href="https://github.com/HdbSoft/nut/releases">releases directory</a> as a <em>.zip</em> file or build it by yourself. You can also get pre-compiled binaries from our <a href="https://github.com/HdbSoft/nut-bins">nut bins repository</a>.</p>
+
+<p>If you want to build nut from source code, you first need to clone the repository into your machine:
+<code>bash
+$ git clone https://github.com/HdbSoft/nut.git nut
+$ cd nut/
+</code></p>
+
+<h4>Building nut</h4>
+
+<p>If you don't want to build nut by using cross-compiling, you just need to use run this command replacing YOUR-ARCH by your architecture:
+<code>bash
+$ make ARCH=YOUR-ARCHITECTURE
+</code>
+by default, nut Makefile uses <strong>x86</strong> as target architecture.</p>
+
+<blockquote>
+  <p><strong>NOTE:</strong> if you haven't build nut before, you will need to make with the EXISTS-NUT-INCLUDE as no:\
+<code>$ make EXISTS-NUT-INCLUDE=no</code></p>
+
+<p>If you haven't got the necessary tools to build nut, you can install them by running your OS's nut setup file:\
+<code>$ ./setup/setup.YOUR-OS.sh</code></p>
+</blockquote>
+
+<p>You can also cross-compile nut, by setting the CC variable by your cross compiler and the ASSEMBLER variable by your cross assembler. For example, if you want to cross-compile nut from x86 to ARM32, you can run this:
+<code>bash
+$ make "CC=arm-linux-gnueabihf-gcc" "ASSEMBLER=arm-none-eabi-gcc -mcpu=cortex-a7 -fpic -ffreestanding -c" ARCH=ARM32
+</code></p>
+
+<p>or if you want to build nut for Sun SPARC, you can run this command:
+<code>bash
+$ make CC=sparc-elf-gcc ASSEMBLER=sparc-elf-as ARCH=SPARC
+</code></p>
+
+<p>you can also build nut for MOS 6502 (by now is unstable):
+<code>bash
+$ make CC=cc65 ASSEMBLER=cl65 ARCH=6502
+</code></p>
+
+<blockquote>
+  <p><strong>NOTE:</strong> cross compilers are not included in nut's setup scripts, if you want to cross compile, you will need to get them by yourself.</p>
+</blockquote>
+
+<p>You can just build the kernel or the bootfile by running the <code>kernel</code> or the <code>bootfile</code> recipe.</p>
+
+<h6>Available architectures list</h6>
+
+<ul>
+<li><strong>x86</strong></li>
+<li><strong>ARM</strong></li>
+<li><strong>ARM32</strong></li>
+<li><strong>RISC-V</strong></li>
+<li><strong>6502</strong></li>
+<li><strong>raspberrypiA-B-Zero</strong></li>
+<li><strong>raspberrypi2</strong></li>
+<li><strong>raspberrypi3-4</strong></li>
+<li><strong>SPARC</strong></li>
+<li><strong>MIPS</strong></li>
+<li><strong>C</strong></li>
+</ul>
+
+<p>You can also configure your compiler by replacing CC by your compiler's name (by default nut uses clang):
+<code>bash
+$ make CC=gcc
+</code></p>
+
+<p>your output directory:
+<code>bash
+$ make OUTPUT=bin
+</code></p>
+
+<p>your assembler:
+<code>bash
+$ make ASSEMBLER=as
+</code></p>
+
+<p>and more...</p>
+
+<p>When you finish compiling, your binaries will be in the bin directory. If you want to build the complete nut environment (boot files, kernel, boot scripts and more...) you can run this command instead:
+<code>bash
+$ make release
+</code></p>
+
+<p>you will see a new directory called release, there will be your binaries, and also a <em>.zip</em> file called <em>nut.YOUR-ARCH.zip</em>, there will be the nut environment.</p>
+
+<h3>Contributing</h3>
+
+<p>If you want to contribute and you are not a member of HdbSoft, you just need to fork this repository and make your changes there, then make a pull request and we will see it.</p>
+
+<h3><a href="LICENSE.md">MIT license</a></h3>
+
+<h6>Copyright (c) 2020 HdbSoft</h6>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+
+<p><br>
+<br>
+<br></p>
+
+<p>I hope you like the nut kernel.</p>
